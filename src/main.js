@@ -30,7 +30,7 @@ function handlerAddSearch(event) {
 
   if (searchQuery === '') {
     list.innerHTML = '';
-    return showError('Введіть дані для пошуку');
+    return showError('Enter data to search');
   }
 
   list.innerHTML = '';
