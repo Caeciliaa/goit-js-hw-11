@@ -27,7 +27,7 @@ export function createMarkup(arr) {
           height="200"
         />
       </a>
-      <ul class="inform-container">
+      <ul class="inform-container"> +
         <li class="inform-item">
           <h3 class="inform-title">Likes</h3>
           <p>${likes}</p>
