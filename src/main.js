@@ -18,7 +18,7 @@ iziToast.settings({
 });
 
 const form = document.querySelector('.js-search-form');
-const loader = document.querySelector('.loader');
+const loader = document.querySelector('.js-loader-container');
 
 form.addEventListener('submit', handlerAddSearch);
 
@@ -34,7 +34,6 @@ function handlerAddSearch(event) {
   }
 
   list.innerHTML = '';
-  loader.classList.remove('hidden');
 
   searchImages(searchQuery)
     .then(data => {
@@ -43,10 +42,13 @@ function handlerAddSearch(event) {
           'Sorry, there are no images matching your search query. Please try again!'
         );
       }
-      loader.classList.add('hidden');
-      const markup = createMarkup(data.hits);
-      list.innerHTML = markup;
-      lightbox.refresh();
+      loader.classList.remove('hidden');
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        const markup = createMarkup(data.hits);
+        list.innerHTML = markup;
+        lightbox.refresh();
+      }, 1500);
     })
     .catch(err => {
       loader.classList.add('hidden');

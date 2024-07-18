@@ -19,10 +19,10 @@ export function createMarkup(arr) {
       }) =>
         `<li class="gallery-item">
       <a class="gallery-link" href="${largeImageURL}">
-        <img 
-          class="gallery-image" 
-          src="${webformatURL}" 
-          alt="${tags}" 
+        <img
+          class="gallery-image"
+          src="${webformatURL}"
+          alt="${tags}"
           width="340"
           height="200"
         />
